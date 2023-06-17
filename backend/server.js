@@ -14,6 +14,7 @@ const IndexRoute = require('./routes');
 app.use(express.json());
 app.use(cors());
 app.use(logger('dev'))
+
 app.use('/', IndexRoute);
 
 app.listen(PORT, (err)=>{

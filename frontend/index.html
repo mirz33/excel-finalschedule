@@ -7,11 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav></nav>
+    <nav>EXCEL WEB</nav>
     <section>
-        <button onclick="getExcel()">get excel</button>
-        <button onclick="getExcels()">get excels</button>
-        <button onclick="addExcel()">add excel</button>
+        <form action="" id="form" onsubmit="addExcel()" method="POST" enctype="multipart/form-data">
+            input your file here :
+            <input id="file" type="file">
+            <br>
+            <button id="filer" type="submit">upload</button>
+        </form>
+        list of files :
+        <button onclick="getExcels()">get all data</button>
+        <div id="files">
+            <p>dummy <button>delete</button> </p>
+        </div>
+        <button onclick="getExcel()" >get file data</button>
+        files data :
+        <div id="content">content</div>
         <button onclick="deleteExcel()">delete excel</button>
     </section>
     <footer></footer>
