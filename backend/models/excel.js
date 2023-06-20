@@ -5,6 +5,10 @@ const excelSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    fileOriginalName:{
+        type:String,
+        required:true
+    },
     filePath:{
         type:String,
         required:true

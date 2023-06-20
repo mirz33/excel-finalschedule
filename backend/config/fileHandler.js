@@ -4,7 +4,7 @@ const multerStorage = multer.diskStorage({
         cb(null, "public");
     },
     filename: (req, file, cb)=>{
-        req.filename = new Date().toISOString().replace(/:/g, '-').replace('.','-') + file.originalname;
+        req.filename = new Date().toISOString().replace(/:/g, '-').replace('.','-') + file.originalname.replace(' ','-').replace('(|)/g','');
         cb(null, req.filename)
     }
 })

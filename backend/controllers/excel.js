@@ -11,9 +11,9 @@ const getExcels = async(req, res)=>{
     }
 }
 const getExcel = async(req, res)=>{
-    const id = req.params.id;
+    const date = req.params.date;
     try{
-        const file = await Excel.findById(id);
+        const file = await Excel.findOne({createdAt:date});
         res.status(200).json(file);
     }catch(err){
         console.log(err);
@@ -25,7 +25,8 @@ const addExcel = async(req, res)=>{
     try{
         const excel = Excel({
             fileName:req.file.filename,
-            filePath:`public/${req.file.filename}`
+            filePath:`public/${req.file.filename}`,
+            fileOriginalName:req.file.originalname
         })
         const data = await excel.save();
         res.status(200).json(data)
