@@ -1,5 +1,276 @@
-*{
+/* Reset default styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #A9DCE3;
+    padding: 100px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #5F9EA0;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    color: #FFD700;
+  }
+  
+  /* Main content styles */
+  main {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #5F9EA0;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  h3 {
+    padding: 10px;
+    color: #5F9EA0;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+  }
+  
+  form {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Additional styles for visual appeal */
+  body {
+    color: #333;
+  }
+  
+  header h1 {
+    font-size: 36px;
+  }
+  
+  nav ul li a {
+    font-size: 18px;
+  }
+  
+  
+  
+  table td {
+    background-color: #f2f2f2;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  footer a:hover {
+    color: #FFD700;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  header {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  nav ul li {
+    animation: fadeIn 1s ease-in;
+    animation-delay: 0.2s;
+  }
+  
+  table {
+    animation: fadeIn 1s ease-in;
+    
+  }
+  table {
+    border-collapse: collapse;
+    margin: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    min-width: 80px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  td {
+    font-size: 14px;
+  }
+  
+  input[type="file"] {
+    margin: 20px;
+  }
+  
+  .sheet-container {
+    overflow-x: auto;
+  }
+  
+  .sheet-table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  .sheet-table th,
+  .sheet-table td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .sheet-table th {
+    height: 32px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .sheet-table td {
+    height: 24px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  
+  .sheet-table td input[type="text"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .sheet-table td:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .sheet-table td.selected {
+    background-color: #c5d9f1;
+  }
+  p#lastUpdated {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+
+
+
+  section{
+    background: #f3f3f3;
+  }
+  .cardcontainer{
+    display: flex;
+    justify-content: center;
+  }
+  .card{
+    color: #222;
+    flex:1;
+    min-height: 30vh;
+    max-height: 30vh;
+    height: 30vh;
+    margin: 1rem;
+    background: #fcfcfc;
+    border-radius: 3px;
+    border: 1px solid #8b8b8b52;
+    box-shadow: 1rem 1rem 5rem #a0a0a080;
     font-family: sans-serif;
+    transition: 0.3s ease;
+  }
+  .card:hover{
+    box-shadow: none;
+  }
+  .cardhead{
+    padding: 0.5rem 1rem;
+    background: rgb(116, 212, 212);
+  }
+  .cardbody{
+    padding: 0.5rem 1rem;
+    overflow-y: scroll;
+    height: 100%;
+  }
+  ul{
+    list-style: none;
+  }
+  div{
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    
+  }
+h2{
+  padding: 10px;
+  color: white;
+  font-size: large;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  
 }
+
+#item{
+    padding: 1px;
+    color: #222;
+    border-bottom: 0.5px solid #3333338f;
+}
+
+
+
+/* REAL STYLING  */
+
+

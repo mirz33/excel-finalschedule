@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="frontend.css">
+</head>
+<body onload="init()">
+    <nav>
+        <div class="logo">PERFOMANCE DASHBOARD</div>
+        <div class="items">
+            <ul>
+                <li class="item">Home</li>
+                <li class="item">Login</li>
+                <li class="item">About</li>
+                <li class="item">Contact</li>
+            </ul>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="contentWrapper">
+            <div class="content">
+                <h1>WELCOME TO <br> PERFOMANCE MATRIX DASHBOARD</h1>
+                <p class="desc">Excel sheet's will be uploaded here by daily automated!</p>
+                <h2 class="highligts">Here you can <span class="changes" id="changes">upload</span></h2>
+            </div>
+        </div>
+        <div class="imageContainer">
+            <img src="./images/homeimage.png" alt="cannot laod image" sizes="" srcset="">
+        </div>
+    </section>
+    <section id="services">
+        <div class="title"><span>SERVICES</span></div>
+
+        <div class="cardContainer">
+            <div class="card">
+                <div class="cardHead">
+                    UPLOAD
+                </div>
+                <div class="cardBody">
+                    <p id="lastUpdated"></p>
+                    <p>upload your file here</p>
+                    <form method="POST" id="form">
+                        <input type="file" id="file" name="" id="">
+                        <button id="submit" type="submit" onclick="addExcel()">upload</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardHead">
+                    FILES
+                </div>
+                <div class="cardBody">
+                    files
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardHead">
+                    FILTERS
+                </div>
+                <div class="cardBody">
+                    <p>By date : </p>
+                    <input type="date">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contents">
+        <div id="excelContainer"></div>
+    </section>
+
+
+    <script>
+    
+    function init() {
+      displayLastUpdated();
+      getExcels();
+    }
+    function displayLastUpdated() {
+      var lastUpdated = new Date(document.lastModified);
+      var formattedDate = lastUpdated.toLocaleDateString();
+      var formattedTime = lastUpdated.toLocaleTimeString();
+      var displayString = 'Last Updated: ' + formattedDate + ' ' + formattedTime;
+      document.getElementById('lastUpdated').textContent = displayString;
+    }
+    function handleFile(e) {
+        console.log('changed');
+      e.preventDefault();
+      var files = e.target.files;
+      var i, f;
+      for (i = 0, f = files[i]; i !== files.length; ++i) {
+        var reader = new FileReader();
+        var name = f.name;
+        reader.onload = function (e) {
+          var data = new Uint8Array(e.target.result);
+          var workbook = XLSX.read(data, { type: 'array' });
+          var sheetName = workbook.SheetNames[0];
+          var sheet = workbook.Sheets[sheetName];
+          var html = XLSX.utils.sheet_to_html(sheet);
+          document.getElementById('excelContainer').innerHTML = html;
+        };
+        reader.readAsArrayBuffer(f);
+      }
+    }
+    document.getElementById('file').addEventListener('change', handleFile, false);
+    </script>
+     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+     <script src="script.js"></script>
+</body>
+</html>

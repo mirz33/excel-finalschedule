@@ -9,12 +9,17 @@ function getExcel(){
         console.log(err);
     })
 }
+
 function getExcels(){
     console.log('on getExcels');
     fetch(`${url}`).then((res)=>{
         return res.json();
     }).then((data)=>{
         console.log(data);
+        const fileList = document.getElementById('fileList')
+        for(i=0;i<data.length;i++){
+            fileList.innerHTML = fileList.innerHTML + `<li id="item">${data[i].fileOriginalName}</li>`
+        }
     }).catch((err)=>{
         console.log(err);
     })
